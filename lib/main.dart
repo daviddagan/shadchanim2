@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:country_code_picker/country_code_picker.dart';
@@ -7,9 +7,9 @@ import 'package:flutter_app/providers/chatProvider.dart';
 import 'package:flutter_app/providers/personProvider.dart';
 import 'package:flutter_app/providers/shadchanProvider.dart';
 import 'package:flutter_app/screens/shadchanSignUpScrenn.dart';
-import 'package:flutter_app/splash-screen.dart';
+//import 'package:flutter_app/splash-screen.dart';
 import 'package:flutter_app/themes/colorManager.dart';
-import 'package:flutter_app/widgets/OutLineButtonMy.dart';
+//import 'package:flutter_app/widgets/OutLineButtonMy.dart';
 import 'package:flutter_app/widgets/gradientSwitcher.dart';
 import 'package:flutter_app/widgets/loader.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -69,150 +69,152 @@ class _MyAppState extends State<MyApp> {
           ),
         ],
         child: MaterialApp(
-          themeMode: ColorManager.mYTHEME == MYTHEME.DARK ? ThemeMode.dark : ThemeMode.light,
-          theme: ThemeData(
-            errorColor: Colors.red[300],
-            hintColor: Colors.grey, //ColorManager().theme.secondary,
+            themeMode: ColorManager.mYTHEME == MYTHEME.DARK ? ThemeMode.dark : ThemeMode.light,
+            theme: ThemeData(
+              errorColor: Colors.red[300],
+              hintColor: Colors.grey, //ColorManager().theme.secondary,
 
-            chipTheme: ChipThemeData(
-                disabledColor: ColorManager().theme.primary,
-                backgroundColor: ColorManager().theme.primary,
-                checkmarkColor: ColorManager().theme.primary[300],
-                selectedColor: ColorManager().theme.filterBackgroundColor,
-                selectedShadowColor: ColorManager().theme.primary,
-                secondarySelectedColor: ColorManager().theme.primary,
-                labelPadding: EdgeInsets.symmetric(horizontal: 10),
-                padding: EdgeInsets.all(0),
-                shape: StadiumBorder(side: BorderSide(color: Color(0xFFA390E3), width: 1.5)),
-                labelStyle: TextStyle(color: ColorManager().theme.secondary),
-                secondaryLabelStyle: TextStyle(color: ColorManager().theme.secondary),
-                brightness: Brightness.light),
+              chipTheme: ChipThemeData(
+                  disabledColor: ColorManager().theme.primary,
+                  backgroundColor: ColorManager().theme.primary,
+                  checkmarkColor: ColorManager().theme.primary[300],
+                  selectedColor: ColorManager().theme.filterBackgroundColor,
+                  selectedShadowColor: ColorManager().theme.primary,
+                  secondarySelectedColor: ColorManager().theme.primary,
+                  labelPadding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.all(0),
+                  shape: StadiumBorder(side: BorderSide(color: Color(0xFFA390E3), width: 1.5)),
+                  labelStyle: TextStyle(color: ColorManager().theme.secondary),
+                  secondaryLabelStyle: TextStyle(color: ColorManager().theme.secondary),
+                  brightness: Brightness.light),
 
-            inputDecorationTheme: InputDecorationTheme(
+              inputDecorationTheme: InputDecorationTheme(
 
-                //  enabledBorder: OutlineInputBorder(
-                //       borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-                //       borderSide: BorderSide(color: ColorManager().theme.secondary,),
-                //     ),
-                //       disabledBorder: OutlineInputBorder(
-                //       borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-                //       borderSide: BorderSide(color: ColorManager().theme.secondary, ),
-                //     ),
+                  //  enabledBorder: OutlineInputBorder(
+                  //       borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+                  //       borderSide: BorderSide(color: ColorManager().theme.secondary,),
+                  //     ),
+                  //       disabledBorder: OutlineInputBorder(
+                  //       borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+                  //       borderSide: BorderSide(color: ColorManager().theme.secondary, ),
+                  //     ),
 
-                //     focusedBorder: OutlineInputBorder(
-                //       borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-                //       borderSide: BorderSide(color: ColorManager().theme.secondary, ),
-                //     ),
+                  //     focusedBorder: OutlineInputBorder(
+                  //       borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+                  //       borderSide: BorderSide(color: ColorManager().theme.secondary, ),
+                  //     ),
 
+                  contentPadding: EdgeInsets.all(15),
+                  // border: OutlineInputBorder(
+                  //   // borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+                  //   // borderSide: BorderSide(color: ColorManager().theme.secondary, ),
+                  // ),
+                  labelStyle: TextStyle(color: Colors.grey[600]),
+                  hintStyle: TextStyle(color: Colors.grey[600]) // ColorManager().theme.secondary),
+                  ),
+              //        textTheme: Theme.of(context).textTheme.apply(
+              // bodyColor: Colors.grey[600],),
+              iconTheme: IconThemeData(color: Colors.grey),
+              //canvasColor: ColorManager().theme.fillColor, //משפיע על רקעי מערכת כמו הרקע של הכותרת של הסטפר
+
+              //appBarTheme: AppBarTheme(color: ColorManager().theme.fillColor ),
+              //bottomAppBarColor: ColorManager().theme.fillColor,
+              dialogBackgroundColor: ColorManager().theme.filterBackgroundColor,
+              scaffoldBackgroundColor: ColorManager().theme.primary,
+              //cardColor: ColorManager().theme.cardBackgroundColor,
+              brightness: Brightness.light,
+              primaryColor: ColorManager().theme.secondary,
+              accentColor: ColorManager().theme.secondary,
+              snackBarTheme: SnackBarThemeData(backgroundColor: ColorManager().theme.secondary, contentTextStyle: TextStyle(color: Colors.white)),
+              buttonTheme: ButtonThemeData(
+                //משפיע על כפתורי מערכת כמו המשך ב stepper
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)), buttonColor: ColorManager().theme.secondary,
+              ),
+            ),
+            darkTheme: ThemeData(
+              backgroundColor: ColorManager().theme.primary,
+              errorColor: Colors.red[300],
+              chipTheme: ChipThemeData(
+                  disabledColor: ColorManager().theme.fillColor,
+                  backgroundColor: ColorManager().theme.fillColor,
+                  checkmarkColor: ColorManager().theme.primary[300],
+                  selectedColor: ColorManager().theme.filterBackgroundColor,
+                  selectedShadowColor: ColorManager().theme.primary[300],
+                  secondarySelectedColor: ColorManager().theme.filterBackgroundColor,
+                  labelPadding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.all(0),
+                  shape: StadiumBorder(side: BorderSide(color: ColorManager().theme.fillColor)),
+                  labelStyle: TextStyle(color: ColorManager().theme.primary[300]),
+                  secondaryLabelStyle: TextStyle(color: ColorManager().theme.primary[300]),
+                  brightness: Brightness.dark),
+              hintColor: ColorManager().theme.primary[300],
+              inputDecorationTheme: InputDecorationTheme(
+                fillColor: Colors.black12,
+                filled: true,
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+                  borderSide: BorderSide(
+                    color: ColorManager().theme.primary,
+                  ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+                  borderSide: BorderSide(
+                    color: ColorManager().theme.primary,
+                  ),
+                ),
                 contentPadding: EdgeInsets.all(15),
-                // border: OutlineInputBorder(
-                //   // borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-                //   // borderSide: BorderSide(color: ColorManager().theme.secondary, ),
-                // ),
-                labelStyle: TextStyle(color: Colors.grey[600]),
-                hintStyle: TextStyle(color: Colors.grey[600]) // ColorManager().theme.secondary),
+                border: OutlineInputBorder(
+                  borderRadius: const BorderRadius.all(Radius.circular(30.0)),
+                  borderSide: BorderSide(
+                    color: ColorManager().theme.primary[300],
+                  ),
                 ),
-            //        textTheme: Theme.of(context).textTheme.apply(
-            // bodyColor: Colors.grey[600],),
-            iconTheme: IconThemeData(color: Colors.grey),
-            //canvasColor: ColorManager().theme.fillColor, //משפיע על רקעי מערכת כמו הרקע של הכותרת של הסטפר
-
-            //appBarTheme: AppBarTheme(color: ColorManager().theme.fillColor ),
-            //bottomAppBarColor: ColorManager().theme.fillColor,
-            dialogBackgroundColor: ColorManager().theme.filterBackgroundColor,
-            scaffoldBackgroundColor: ColorManager().theme.primary,
-            //cardColor: ColorManager().theme.cardBackgroundColor,
-            brightness: Brightness.light,
-            primaryColor: ColorManager().theme.secondary,
-            accentColor: ColorManager().theme.secondary,
-            snackBarTheme: SnackBarThemeData(backgroundColor: ColorManager().theme.secondary, contentTextStyle: TextStyle(color: Colors.white)),
-            buttonTheme: ButtonThemeData(
-              //משפיע על כפתורי מערכת כמו המשך ב stepper
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)), buttonColor: ColorManager().theme.secondary,
-            ),
-          ),
-          darkTheme: ThemeData(
-            backgroundColor: ColorManager().theme.primary,
-            errorColor: Colors.red[300],
-            chipTheme: ChipThemeData(
-                disabledColor: ColorManager().theme.fillColor,
-                backgroundColor: ColorManager().theme.fillColor,
-                checkmarkColor: ColorManager().theme.primary[300],
-                selectedColor: ColorManager().theme.filterBackgroundColor,
-                selectedShadowColor: ColorManager().theme.primary[300],
-                secondarySelectedColor: ColorManager().theme.filterBackgroundColor,
-                labelPadding: EdgeInsets.symmetric(horizontal: 10),
-                padding: EdgeInsets.all(0),
-                shape: StadiumBorder(side: BorderSide(color: ColorManager().theme.fillColor)),
-                labelStyle: TextStyle(color: ColorManager().theme.primary[300]),
-                secondaryLabelStyle: TextStyle(color: ColorManager().theme.primary[300]),
-                brightness: Brightness.dark),
-            hintColor: ColorManager().theme.primary[300],
-            inputDecorationTheme: InputDecorationTheme(
-              fillColor: Colors.black12,
-              filled: true,
-              enabledBorder: OutlineInputBorder(
-                borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-                borderSide: BorderSide(
-                  color: ColorManager().theme.primary,
-                ),
+                hintStyle: TextStyle(color: ColorManager().theme.primary[300]),
               ),
-              disabledBorder: OutlineInputBorder(
-                borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-                borderSide: BorderSide(
-                  color: ColorManager().theme.primary,
-                ),
-              ),
-              contentPadding: EdgeInsets.all(15),
-              border: OutlineInputBorder(
-                borderRadius: const BorderRadius.all(Radius.circular(30.0)),
-                borderSide: BorderSide(
-                  color: ColorManager().theme.primary[300],
-                ),
-              ),
-              hintStyle: TextStyle(color: ColorManager().theme.primary[300]),
-            ),
 
-            canvasColor: ColorManager().theme.fillColor, //משפיע על רקעי מערכת כמו הרקע של הכותרת של הסטפר
+              canvasColor: ColorManager().theme.fillColor, //משפיע על רקעי מערכת כמו הרקע של הכותרת של הסטפר
 
-            appBarTheme: AppBarTheme(color: ColorManager().theme.fillColor),
-            bottomAppBarColor: ColorManager().theme.fillColor,
-            dialogBackgroundColor: ColorManager().theme.filterBackgroundColor,
-            scaffoldBackgroundColor: ColorManager().theme.filterBackgroundColor,
-            cardColor: ColorManager().theme.cardBackgroundColor,
-            brightness: Brightness.dark,
-            primaryColor: ColorManager().theme.primary,
-            accentColor: ColorManager().theme.secondary,
-            snackBarTheme: SnackBarThemeData(backgroundColor: ColorManager().theme.secondary, contentTextStyle: TextStyle(color: Colors.white)),
-            buttonTheme: ButtonThemeData(
-              //משפיע על כפתורי מערכת כמו המשך ב stepper
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)), buttonColor: ColorManager().theme.secondary,
+              appBarTheme: AppBarTheme(color: ColorManager().theme.fillColor),
+              bottomAppBarColor: ColorManager().theme.fillColor,
+              dialogBackgroundColor: ColorManager().theme.filterBackgroundColor,
+              scaffoldBackgroundColor: ColorManager().theme.filterBackgroundColor,
+              cardColor: ColorManager().theme.cardBackgroundColor,
+              brightness: Brightness.dark,
+              primaryColor: ColorManager().theme.primary,
+              accentColor: ColorManager().theme.secondary,
+              snackBarTheme: SnackBarThemeData(backgroundColor: ColorManager().theme.secondary, contentTextStyle: TextStyle(color: Colors.white)),
+              buttonTheme: ButtonThemeData(
+                //משפיע על כפתורי מערכת כמו המשך ב stepper
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)), buttonColor: ColorManager().theme.secondary,
+              ),
             ),
-          ),
-          localizationsDelegates: [
-            // ... app-specific localization delegate[s] here
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-          ],
-          supportedLocales: [
-            const Locale('en'), // English
-            const Locale('he'), // Hebrew
-            // ... other locales the app supports
-          ],
-          locale: local,
-          title: 'Flutter Demo',
-          routes: <String, WidgetBuilder>{'/homepage': (BuildContext context) => ShadchanSignUpScreen(), '/landingpage': (BuildContext context) => LandingPage()},
-          home: FutureBuilder(
-            future: FirebaseAuth.instance.currentUser(),
-            builder: (ctx, authResultSnapshot) => authResultSnapshot.connectionState == ConnectionState.waiting
-                ? SplashScreen()
-                : authResultSnapshot.data != null
-                    ? ShadchanSignUpScreen()
-                    : MyHomePage(
-                        title: "Verify your phone",
-                      ),
-          ),
-        ));
+            localizationsDelegates: [
+              // ... app-specific localization delegate[s] here
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: [
+              const Locale('en'), // English
+              const Locale('he'), // Hebrew
+              // ... other locales the app supports
+            ],
+            locale: local,
+            title: 'Flutter Demo',
+            routes: <String, WidgetBuilder>{'/homepage': (BuildContext context) => ShadchanSignUpScreen(), '/landingpage': (BuildContext context) => LandingPage()},
+            home: ShadchanSignUpScreen()
+
+            // FutureBuilder(
+            //   future: FirebaseAuth.instance.currentUser(),
+            //   builder: (ctx, authResultSnapshot) => authResultSnapshot.connectionState == ConnectionState.waiting
+            //       ? SplashScreen()
+            //       : authResultSnapshot.data != null
+            //           ? ShadchanSignUpScreen()
+            //           : MyHomePage(
+            //               title: "Verify your phone",
+            //             ),
+            // ),
+            ));
   }
 }
 //}
@@ -247,42 +249,42 @@ class _MyHomePageState extends State<MyHomePage> {
   TextEditingController phoneCode = TextEditingController(text: "+972");
   bool isLoading = false;
 
-  Future<void> verifyPhone() async {
-    setState(() {
-      isLoading = true;
-    });
-    final PhoneCodeAutoRetrievalTimeout autoRetrieve = (String verId) {
-      this.verificationId = verId;
-    };
-    final PhoneCodeSent smsCodeSent = (String verId, [int forceCodeResend]) {
-      this.verificationId = verId;
-      smsCodeDialog(context).then((onValue) {
-        print('Signed in');
-      });
-    };
-    final PhoneVerificationCompleted verifiedSuccess = (AuthCredential phoneCredentials) {
-      // setState(() {
-      //  isLoading=false;
-      // });
-      print("verified");
-      FirebaseAuth.instance.currentUser().then((user) {
-        if (user != null) {
-          Navigator.pop(context);
-          Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new ShadchanSignUpScreen()));
-        }
-      });
-    };
-    final PhoneVerificationFailed verifiedFailed = (AuthException exception) {
-      print('${exception.message}');
-    };
-    await FirebaseAuth.instance.verifyPhoneNumber(
-        phoneNumber: this.phoneCode.text + " " + this.phoneNo,
-        codeAutoRetrievalTimeout: autoRetrieve,
-        codeSent: smsCodeSent,
-        timeout: const Duration(seconds: 5),
-        verificationCompleted: verifiedSuccess,
-        verificationFailed: verifiedFailed);
-  }
+  // Future<void> verifyPhone() async {
+  //   setState(() {
+  //     isLoading = true;
+  //   });
+  //   final PhoneCodeAutoRetrievalTimeout autoRetrieve = (String verId) {
+  //     this.verificationId = verId;
+  //   };
+  //   final PhoneCodeSent smsCodeSent = (String verId, [int forceCodeResend]) {
+  //     this.verificationId = verId;
+  //     smsCodeDialog(context).then((onValue) {
+  //       print('Signed in');
+  //     });
+  //   };
+  //   final PhoneVerificationCompleted verifiedSuccess = (AuthCredential phoneCredentials) {
+  //     // setState(() {
+  //     //  isLoading=false;
+  //     // });
+  //     print("verified");
+  //     FirebaseAuth.instance.currentUser().then((user) {
+  //       if (user != null) {
+  //         Navigator.pop(context);
+  //         Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new ShadchanSignUpScreen()));
+  //       }
+  //     });
+  //   };
+  //   final PhoneVerificationFailed verifiedFailed = (AuthException exception) {
+  //     print('${exception.message}');
+  //   };
+  //   await FirebaseAuth.instance.verifyPhoneNumber(
+  //       phoneNumber: this.phoneCode.text + " " + this.phoneNo,
+  //       codeAutoRetrievalTimeout: autoRetrieve,
+  //       codeSent: smsCodeSent,
+  //       timeout: const Duration(seconds: 5),
+  //       verificationCompleted: verifiedSuccess,
+  //       verificationFailed: verifiedFailed);
+  // }
 
   Future<bool> smsCodeDialog(BuildContext context) {
     return showDialog(
@@ -304,18 +306,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   setState(() {
                     isLoading = true;
                   });
-                  FirebaseAuth.instance.currentUser().then((user) {
-                    if (user != null) {
-                      Navigator.pop(context);
-                      setState(() {
-                        isLoading = false;
-                      });
-                      Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new ShadchanSignUpScreen()));
-                    } else {
-                      Navigator.of(context).pop();
-                      signIn();
-                    }
-                  });
+                  // FirebaseAuth.instance.currentUser().then((user) {
+                  //   if (user != null) {
+                  //     Navigator.pop(context);
+                  //     setState(() {
+                  //       isLoading = false;
+                  //     });
+                  //     Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context) => new ShadchanSignUpScreen()));
+                  //   } else {
+                  //     Navigator.of(context).pop();
+                  //     signIn();
+                  //   }
+                  // });
                 },
               )
             ],
@@ -323,21 +325,21 @@ class _MyHomePageState extends State<MyHomePage> {
         });
   }
 
-  signIn() {
-    final AuthCredential credential = PhoneAuthProvider.getCredential(
-      verificationId: verificationId,
-      smsCode: smsCode,
-    );
+  // signIn() {
+  //   final AuthCredential credential = PhoneAuthProvider.getCredential(
+  //     verificationId: verificationId,
+  //     smsCode: smsCode,
+  //   );
 
-    FirebaseAuth.instance.signInWithCredential(credential).then((user) {
-      setState(() {
-        isLoading = false;
-      });
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ShadchanSignUpScreen()));
-    }).catchError((e) {
-      print(e);
-    });
-  }
+  //   FirebaseAuth.instance.signInWithCredential(credential).then((user) {
+  //     setState(() {
+  //       isLoading = false;
+  //     });
+  //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ShadchanSignUpScreen()));
+  //   }).catchError((e) {
+  //     print(e);
+  //   });
+  // }
 
   var isInit = false;
   @override
@@ -462,11 +464,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           //SizedBox(height: 10,),
                           //  gradientButtonWoman,
                           // SizedBox(height: 10,),
-                          OutLineButtonMy(
-                            verifyEnabled: verifyEnabled,
-                            callBackFunction: verifyPhone,
-                            text: 'verify',
-                          ),
+                          // OutLineButtonMy(
+                          //   verifyEnabled: verifyEnabled,
+                          //   callBackFunction: verifyPhone,
+                          //   text: 'verify',
+                          // ),
                           //GradientButton.getGradiantButton(context, verifyPhone, 'verify', Colors.black, 20,verifyEnabled),
                           //   CircularProgressIndicator(strokeWidth: 10,),
                           (isLoading) ? Loader() : Container(),

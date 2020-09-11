@@ -5,7 +5,7 @@ import 'package:flutter_app/providers/personProvider.dart';
 import 'package:flutter_app/themes/appTheme.dart';
 import 'package:flutter_app/themes/colorManager.dart';
 import 'package:flutter_app/widgets/photoPickerFlat.dart';
-import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
+//import 'package:flutter_cupertino_date_picker/flutter_cupertino_date_picker.dart';
 import 'package:flutter_app/widgets/selectAndMultiSelectChips.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -549,13 +549,14 @@ class _AddPersonState extends State<AddPerson> {
                                           var initialDate = convertToDate(personProvider.newPerson.birthday != null ? new DateFormat.yMd().format(personProvider.newPerson.birthday) : null) ?? now;
                                           initialDate = (initialDate.year >= 1900 && initialDate.isBefore(now) ? initialDate : now);
                                           return Container(
-                                              height: MediaQuery.of(context).copyWith().size.height / 2.6,
-                                              child: DatePickerWidget(
-                                                initialDateTime: initialDate,
-                                                minDateTime: new DateTime(1900),
-                                                maxDateTime: new DateTime.now(),
-                                                onConfirm: (date, arrey) => selectedDate(date),
-                                              ));
+                                            height: MediaQuery.of(context).copyWith().size.height / 2.6,
+                                            // child: DatePickerWidget(
+                                            //   initialDateTime: initialDate,
+                                            //   minDateTime: new DateTime(1900),
+                                            //   maxDateTime: new DateTime.now(),
+                                            //   onConfirm: (date, arrey) => selectedDate(date),
+                                            // )
+                                          );
                                         });
                                   },
                                   child: Container(
